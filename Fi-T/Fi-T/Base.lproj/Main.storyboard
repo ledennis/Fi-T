@@ -90,12 +90,38 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Day XX" id="Qbe-8m-Z0L">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N7z-Ly-GWF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N7z-Ly-GWF">
+                            <connections>
+                                <segue destination="nWG-TZ-agc" kind="modal" id="Zvg-eU-RY7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SyT-Il-0c9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1645.5999999999999" y="136.28185907046478"/>
+        </scene>
+        <!--Add Workout-->
+        <scene sceneID="53X-Kf-UYQ">
+            <objects>
+                <viewController title="Add Workout" id="vqs-u5-xca" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h6f-2k-O2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="d7J-YU-QgT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="agS-N4-A98">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Workout" id="P7w-YT-oHa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2vS-Sc-J8o"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCV-zV-6WL"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZm-j1-f8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2584.8000000000002" y="897.30134932533736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w7F-Te-QZU">
@@ -112,6 +138,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xH7-s5-EPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="890" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lb2-y8-wHP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nWG-TZ-agc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2tk-qV-jUq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vqs-u5-xca" kind="relationship" relationship="rootViewController" id="WiH-Bm-qZV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-6D-1Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645.5999999999999" y="897.30134932533736"/>
         </scene>
     </scenes>
 </document>
