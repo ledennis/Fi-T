@@ -9,9 +9,33 @@
 import UIKit
 
 class WorkoutTableViewController: UITableViewController {
+    
+    //MARK: Properties
+    
+    var workouts = [Workout]()
+    
+    //MARK: Private Methods
+    
+    private func loadSampleWorkouts() {
+        guard let bench = Workout(name: "Bench", sets:"3 x 10", weight:"225lbs") else {
+            fatalError("Unable to instantiate bench")
+        }
+        
+        guard let deadlift = Workout(name: "Deadlift", sets:"5 x 5", weight:"315lbs") else {
+            fatalError("Unable to instantiate deadlift")
+        }
+        
+        guard let squat = Workout(name: "Squat", sets:"4 x 8", weight:"185lbs") else {
+            fatalError("Unable to instantiate squat")
+        }
+        
+        workouts += [bench, deadlift, squat]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadSampleWorkouts()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,24 +52,29 @@ class WorkoutTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+
+        return workouts.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cellIdentifier = "WorkoutTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WorkoutTableViewCell else {
+            fatalError("The dequeued cell is not an instance of WorkoutTableViewCell.")
+        }
+        
+        let workout = workouts[indexPath.row]
+        
+        cell.nameLabel.text = workout.name
+        cell.setsLabel.text = workout.sets
+        cell.weightLabel.text = workout.weight
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
