@@ -38,16 +38,6 @@
                ReferencedContainer = "container:Fi-T.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77ECAC3620719F7200DA0E88"
-               BuildableName = "Fi-TUITests.xctest"
-               BlueprintName = "Fi-TUITests"
-               ReferencedContainer = "container:Fi-T.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
