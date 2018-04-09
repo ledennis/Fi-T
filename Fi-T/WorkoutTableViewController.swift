@@ -63,6 +63,7 @@ class WorkoutTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "WorkoutTableViewCell"
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WorkoutTableViewCell else {
             fatalError("The dequeued cell is not an instance of WorkoutTableViewCell.")
         }

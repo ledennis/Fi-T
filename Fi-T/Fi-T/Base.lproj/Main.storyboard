@@ -35,7 +35,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="V8x-5w-Ga9" kind="show" id="EiD-WC-cKO"/>
+                                    <segue destination="V8x-5w-Ga9" kind="show" id="BYE-6u-eoI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yTr-Z8-vpM" customClass="WorkoutTableViewCell" customModule="Fi_T" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" id="yTr-Z8-vpM" customClass="WorkoutTableViewCell" customModule="Fi_T" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yTr-Z8-vpM" id="yFd-tu-Rsj">
