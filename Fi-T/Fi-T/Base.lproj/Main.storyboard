@@ -105,16 +105,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Workout" id="P7w-YT-oHa">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2vS-Sc-J8o"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCV-zV-6WL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCV-zV-6WL">
+                            <connections>
+                                <segue destination="2HI-nH-n4G" kind="unwind" unwindAction="unwindToWorkoutListWithSender:" id="qUb-82-4Tm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addSetsTF" destination="I9D-3P-5QG" id="WLN-q7-E27"/>
                         <outlet property="addWeightsTF" destination="lti-Jw-ZKS" id="MUy-4O-94d"/>
                         <outlet property="addWorkoutTF" destination="RhB-cg-T8z" id="66T-Lm-9Fc"/>
-                        <outlet property="saveButton" destination="HCV-zV-6WL" id="5dk-Zf-YIs"/>
+                        <outlet property="saveButton" destination="HCV-zV-6WL" id="ucd-Fh-pES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZm-j1-f8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2HI-nH-n4G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="897.30134932533736"/>
         </scene>
@@ -134,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="908" y="137"/>
         </scene>
-        <!--Workout Table View Controller-->
+        <!--Workouts-->
         <scene sceneID="59w-Dh-rnJ">
             <objects>
                 <tableViewController id="Us0-NX-vQQ" customClass="WorkoutTableViewController" customModule="Fi_T" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,7 +190,7 @@
                             <outlet property="delegate" destination="Us0-NX-vQQ" id="WVs-OU-LjD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Bj0-FQ-7zK">
+                    <navigationItem key="navigationItem" title="Workouts" id="Bj0-FQ-7zK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eMl-qE-Kpx">
                             <connections>
                                 <segue destination="nWG-TZ-agc" kind="presentation" id="DQe-nG-r3s"/>

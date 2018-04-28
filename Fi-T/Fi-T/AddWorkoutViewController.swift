@@ -11,11 +11,11 @@ import os.log
 
 class AddWorkoutViewController: UIViewController {
     
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var addWorkoutTF: UITextField!
     @IBOutlet weak var addSetsTF: UITextField!
     @IBOutlet weak var addWeightsTF: UITextField!
-    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+
     var workout: Workout?
 
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class AddWorkoutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Navigation
+    
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -39,8 +41,11 @@ class AddWorkoutViewController: UIViewController {
         
         let name = addWorkoutTF.text ?? ""
         let sets = addSetsTF.text ?? ""
-        let weights = addWeightsTF.text ?? ""
+        let weight = addWeightsTF.text ?? ""
+        
+        workout = Workout(name: name, sets: sets, weight: weight)
     }
+    
     
     
 }

@@ -48,6 +48,17 @@ class WorkoutTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Actions
+    
+    @IBAction func unwindToWorkoutList(sender: UIStoryboardSegue) {
+        if let source = sender.source as? AddWorkoutViewController, let workout = source.workout {
+            let newIndexPath = IndexPath(row: workouts.count, section: 0)
+            workouts.append(workout)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
+    }
 
     // MARK: - Table view data source
 
