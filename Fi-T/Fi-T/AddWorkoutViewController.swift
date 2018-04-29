@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class AddWorkoutViewController: UIViewController {
+class AddWorkoutViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addWorkoutTF: UITextField!
     @IBOutlet weak var addSetsTF: UITextField!
@@ -20,7 +20,12 @@ class AddWorkoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Handle the text field’s user input through delegate callbacks.
+        addWorkoutTF.delegate = self
+        
+        // Enable the Save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +55,24 @@ class AddWorkoutViewController: UIViewController {
         workout = Workout(name: name, sets: sets, weight: weight)
     }
     
+    //MARK: UITextFieldDelegate
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
+    
+    }
+    
+    //MARK: Private Methods
+    
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = addWorkoutTF.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
 }
