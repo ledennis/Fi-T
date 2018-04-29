@@ -24,6 +24,14 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate {
         // Handle the text field’s user input through delegate callbacks.
         addWorkoutTF.delegate = self
         
+        // Set up views if editing an existing Workout.
+        if let workout = workout {
+            navigationItem.title = workout.name
+            addWorkoutTF.text   = workout.name
+            addSetsTF.text = workout.sets
+            addWeightsTF.text = workout.weight
+        }
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
@@ -36,7 +44,16 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate {
     //MARK: Navigation
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddWorkoutMode = presentingViewController is UINavigationController
+
+        if isPresentingInAddWorkoutMode {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
     }
 
     // This method lets you configure a view controller before it's presented.

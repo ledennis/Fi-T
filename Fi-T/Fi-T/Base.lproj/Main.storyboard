@@ -125,7 +125,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZm-j1-f8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2HI-nH-n4G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="897.30134932533736"/>
+            <point key="canvasLocation" x="3025" y="160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zUj-fe-cQs">
@@ -186,6 +186,7 @@
                                     <outlet property="nameLabel" destination="FUI-xS-H24" id="tfv-hl-R98"/>
                                     <outlet property="setsLabel" destination="9zf-Ik-aJa" id="vUt-U4-h7R"/>
                                     <outlet property="weightLabel" destination="PX4-Uk-Cvu" id="xMY-ip-B9T"/>
+                                    <segue destination="vqs-u5-xca" kind="show" identifier="ShowDetail" id="2W9-OG-SAA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -197,7 +198,7 @@
                     <navigationItem key="navigationItem" title="Workouts" id="Bj0-FQ-7zK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eMl-qE-Kpx">
                             <connections>
-                                <segue destination="nWG-TZ-agc" kind="presentation" id="DQe-nG-r3s"/>
+                                <segue destination="nWG-TZ-agc" kind="presentation" identifier="AddItem" id="DQe-nG-r3s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -222,7 +223,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-6D-1Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.5999999999999" y="897.30134932533736"/>
+            <point key="canvasLocation" x="2190" y="900"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2W9-OG-SAA"/>
+    </inferredMetricsTieBreakers>
 </document>
