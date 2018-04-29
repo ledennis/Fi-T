@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */; };
-		77ECAC1E20719F7200DA0E88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC1D20719F7200DA0E88 /* ViewController.swift */; };
 		77ECAC2120719F7200DA0E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC1F20719F7200DA0E88 /* Main.storyboard */; };
 		77ECAC2320719F7200DA0E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC2220719F7200DA0E88 /* Assets.xcassets */; };
 		77ECAC2620719F7200DA0E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC2420719F7200DA0E88 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		77ECAC1820719F7200DA0E88 /* Fi-T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fi-T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77ECAC1D20719F7200DA0E88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77ECAC2020719F7200DA0E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77ECAC2220719F7200DA0E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77ECAC2520719F7200DA0E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		773146ED20964DB900343689 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77ECAC51207319D700DA0E88 /* Workout.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		77ECAC0F20719F7200DA0E88 = {
 			isa = PBXGroup;
 			children = (
@@ -105,17 +111,16 @@
 		77ECAC1A20719F7200DA0E88 /* Fi-T */ = {
 			isa = PBXGroup;
 			children = (
-				77ECAC59207327E400DA0E88 /* WorkoutTableViewController.swift */,
-				77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */,
-				77ECAC1D20719F7200DA0E88 /* ViewController.swift */,
-				77ECAC1F20719F7200DA0E88 /* Main.storyboard */,
-				77ECAC542073208500DA0E88 /* WorkoutTableViewCell.swift */,
-				77ECAC2220719F7200DA0E88 /* Assets.xcassets */,
 				77ECAC2420719F7200DA0E88 /* LaunchScreen.storyboard */,
-				77ECAC2720719F7200DA0E88 /* Info.plist */,
-				77ECAC51207319D700DA0E88 /* Workout.swift */,
-				77ECAC4920730B1600DA0E88 /* AddWorkoutViewController.swift */,
+				77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */,
+				773146ED20964DB900343689 /* Classes */,
+				77ECAC1F20719F7200DA0E88 /* Main.storyboard */,
 				77ECAC4D20730FC500DA0E88 /* CurrentDayViewController.swift */,
+				77ECAC59207327E400DA0E88 /* WorkoutTableViewController.swift */,
+				77ECAC542073208500DA0E88 /* WorkoutTableViewCell.swift */,
+				77ECAC4920730B1600DA0E88 /* AddWorkoutViewController.swift */,
+				77ECAC2720719F7200DA0E88 /* Info.plist */,
+				77ECAC2220719F7200DA0E88 /* Assets.xcassets */,
 			);
 			path = "Fi-T";
 			sourceTree = "<group>";
@@ -263,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77ECAC1E20719F7200DA0E88 /* ViewController.swift in Sources */,
 				77ECAC552073208500DA0E88 /* WorkoutTableViewCell.swift in Sources */,
 				77ECAC4E20730FC500DA0E88 /* CurrentDayViewController.swift in Sources */,
 				77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */,
@@ -517,6 +521,7 @@
 				77ECAC4220719F7200DA0E88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77ECAC4320719F7200DA0E88 /* Build configuration list for PBXNativeTarget "Fi-TTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +530,7 @@
 				77ECAC4520719F7200DA0E88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77ECAC4620719F7200DA0E88 /* Build configuration list for PBXNativeTarget "Fi-TUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +539,7 @@
 				77ECAC4820719F7200DA0E88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
