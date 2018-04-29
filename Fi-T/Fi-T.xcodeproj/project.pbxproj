@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77D579BB20968F5F000A9005 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D579BA20968F5F000A9005 /* Workout.swift */; };
 		77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */; };
 		77ECAC2120719F7200DA0E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC1F20719F7200DA0E88 /* Main.storyboard */; };
 		77ECAC2320719F7200DA0E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC2220719F7200DA0E88 /* Assets.xcassets */; };
@@ -14,8 +15,6 @@
 		77ECAC3120719F7200DA0E88 /* Fi_TTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC3020719F7200DA0E88 /* Fi_TTests.swift */; };
 		77ECAC4A20730B1600DA0E88 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC4920730B1600DA0E88 /* AddWorkoutViewController.swift */; };
 		77ECAC4E20730FC500DA0E88 /* CurrentDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC4D20730FC500DA0E88 /* CurrentDayViewController.swift */; };
-		77ECAC52207319D700DA0E88 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC51207319D700DA0E88 /* Workout.swift */; };
-		77ECAC53207319D700DA0E88 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC51207319D700DA0E88 /* Workout.swift */; };
 		77ECAC552073208500DA0E88 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC542073208500DA0E88 /* WorkoutTableViewCell.swift */; };
 		77ECAC562073208500DA0E88 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC542073208500DA0E88 /* WorkoutTableViewCell.swift */; };
 		77ECAC5A207327E400DA0E88 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC59207327E400DA0E88 /* WorkoutTableViewController.swift */; };
@@ -39,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77D579BA20968F5F000A9005 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		77ECAC1820719F7200DA0E88 /* Fi-T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fi-T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77ECAC2020719F7200DA0E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +51,6 @@
 		77ECAC3720719F7200DA0E88 /* Fi-TUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fi-TUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ECAC4920730B1600DA0E88 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
 		77ECAC4D20730FC500DA0E88 /* CurrentDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDayViewController.swift; sourceTree = "<group>"; };
-		77ECAC51207319D700DA0E88 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = ../../../../../.Trash/Workout.swift; sourceTree = "<group>"; };
 		77ECAC542073208500DA0E88 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		77ECAC59207327E400DA0E88 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutTableViewController.swift; path = ../WorkoutTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +83,7 @@
 		773146ED20964DB900343689 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				77ECAC51207319D700DA0E88 /* Workout.swift */,
+				77D579BA20968F5F000A9005 /* Workout.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -271,9 +270,9 @@
 				77ECAC552073208500DA0E88 /* WorkoutTableViewCell.swift in Sources */,
 				77ECAC4E20730FC500DA0E88 /* CurrentDayViewController.swift in Sources */,
 				77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */,
-				77ECAC52207319D700DA0E88 /* Workout.swift in Sources */,
 				77ECAC4A20730B1600DA0E88 /* AddWorkoutViewController.swift in Sources */,
 				77ECAC5A207327E400DA0E88 /* WorkoutTableViewController.swift in Sources */,
+				77D579BB20968F5F000A9005 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +282,6 @@
 			files = (
 				77ECAC3120719F7200DA0E88 /* Fi_TTests.swift in Sources */,
 				77ECAC562073208500DA0E88 /* WorkoutTableViewCell.swift in Sources */,
-				77ECAC53207319D700DA0E88 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
