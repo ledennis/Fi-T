@@ -104,7 +104,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Workout" id="P7w-YT-oHa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2vS-Sc-J8o"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2vS-Sc-J8o">
+                            <connections>
+                                <action selector="cancel:" destination="vqs-u5-xca" id="YJO-hJ-V6y"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCV-zV-6WL">
                             <connections>
                                 <segue destination="2HI-nH-n4G" kind="unwind" unwindAction="unwindToWorkoutListWithSender:" id="qUb-82-4Tm"/>
