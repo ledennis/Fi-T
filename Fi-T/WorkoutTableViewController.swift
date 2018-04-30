@@ -108,6 +108,9 @@ class WorkoutTableViewController: UITableViewController {
         cell.nameLabel.text = workout.name
         cell.setsLabel.text = workout.sets
         cell.weightLabel.text = workout.weight
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsets.zero
 
         return cell
     }
