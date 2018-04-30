@@ -17,20 +17,21 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="center" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fi-T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWk-Bb-N9u">
-                                <rect key="frame" x="136" y="117" width="102" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fi-T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWk-Bb-N9u">
+                                <rect key="frame" x="0.0" y="117" width="375" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-SX-pK2">
-                                <rect key="frame" x="131" y="508" width="113" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-SX-pK2">
+                                <rect key="frame" x="0.0" y="508" width="375" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Up4-Ll-pac"/>
+                                </constraints>
                                 <state key="normal" title="Welcome!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -40,6 +41,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.51170705780000003" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T73-SX-pK2" firstAttribute="leading" secondItem="HWk-Bb-N9u" secondAttribute="leading" id="Sqq-uI-tRs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T73-SX-pK2" secondAttribute="bottom" constant="105" id="Tzg-uu-2Gl"/>
+                            <constraint firstItem="T73-SX-pK2" firstAttribute="trailing" secondItem="HWk-Bb-N9u" secondAttribute="trailing" id="cHs-eN-Q1W"/>
+                            <constraint firstItem="HWk-Bb-N9u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dYA-fB-nhU"/>
+                            <constraint firstAttribute="trailing" secondItem="HWk-Bb-N9u" secondAttribute="trailing" id="omx-Do-SYI"/>
+                            <constraint firstItem="HWk-Bb-N9u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="97" id="ut8-Y5-kDM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
