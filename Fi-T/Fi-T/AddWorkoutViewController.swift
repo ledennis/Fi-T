@@ -122,6 +122,5 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate, UIPickerV
         }
         
         fatalError("Could not find set to load for default set in AddWorkoutViewController.")
-        return -1
     }
 }

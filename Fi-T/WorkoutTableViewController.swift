@@ -126,10 +126,12 @@ class WorkoutTableViewController: UITableViewController {
         return cell
     }
     
+    // Override to support moving rows in edit mode.
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedObject = self.workouts[sourceIndexPath.row]
         workouts.remove(at: sourceIndexPath.row)
         workouts.insert(movedObject, at: destinationIndexPath.row)
+        saveWorkouts()
         NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(workouts)")
         self.tableView.reloadData()
     }
@@ -155,21 +157,6 @@ class WorkoutTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
