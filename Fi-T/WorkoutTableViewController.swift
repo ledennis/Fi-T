@@ -11,6 +11,7 @@ import os.log
 
 class WorkoutTableViewController: UITableViewController {
     
+    @IBOutlet weak var workoutLabels: UILabel!
     //MARK: Properties
     
     var workouts = [Workout]()
@@ -38,6 +39,8 @@ class WorkoutTableViewController: UITableViewController {
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        workoutLabels.layer.borderWidth = 0.25
         
         // Load any saved meals, otherwise load sample data.
         if let savedWorkouts = loadWorkouts() {
@@ -96,14 +99,14 @@ class WorkoutTableViewController: UITableViewController {
         return workouts.count
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .none
-    }
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//        return .none
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
     
-    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "WorkoutTableViewCell"
 
