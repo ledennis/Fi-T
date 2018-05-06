@@ -95,6 +95,14 @@ class WorkoutTableViewController: UITableViewController {
 
         return workouts.count
     }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "WorkoutTableViewCell"
@@ -113,6 +121,14 @@ class WorkoutTableViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsets.zero
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.workouts[sourceIndexPath.row]
+        workouts.remove(at: sourceIndexPath.row)
+        workouts.insert(movedObject, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(workouts)")
+        self.tableView.reloadData()
     }
     
     private func loadWorkouts() -> [Workout]? {
