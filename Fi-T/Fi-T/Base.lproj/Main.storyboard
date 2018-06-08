@@ -39,9 +39,19 @@
                                     <segue destination="V8x-5w-Ga9" kind="show" id="BYE-6u-eoI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="fit-icon-1024x1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-uL-L1w">
+                                <rect key="frame" x="-1" y="244" width="376" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="qWv-dK-hPL"/>
+                                    <constraint firstAttribute="width" constant="376" id="yLP-d8-ZQO"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.792156862745098" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gmm-uL-L1w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Mf-9Q-s5q"/>
+                            <constraint firstItem="gmm-uL-L1w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="13" id="NeG-XU-H4O"/>
                             <constraint firstItem="T73-SX-pK2" firstAttribute="leading" secondItem="HWk-Bb-N9u" secondAttribute="leading" id="Sqq-uI-tRs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T73-SX-pK2" secondAttribute="bottom" constant="105" id="Tzg-uu-2Gl"/>
                             <constraint firstItem="T73-SX-pK2" firstAttribute="trailing" secondItem="HWk-Bb-N9u" secondAttribute="trailing" id="cHs-eN-Q1W"/>
@@ -257,6 +267,9 @@
             <point key="canvasLocation" x="2190" y="900"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fit-icon-1024x1024.png" width="1024" height="1024"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2W9-OG-SAA"/>
     </inferredMetricsTieBreakers>
