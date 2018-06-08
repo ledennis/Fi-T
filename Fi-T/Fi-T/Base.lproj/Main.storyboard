@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.97434544320000005" green="0.79282513180000003" blue="0.93415599920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.792156862745098" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="T73-SX-pK2" firstAttribute="leading" secondItem="HWk-Bb-N9u" secondAttribute="leading" id="Sqq-uI-tRs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T73-SX-pK2" secondAttribute="bottom" constant="105" id="Tzg-uu-2Gl"/>
