@@ -13,27 +13,27 @@ class WorkoutDay: NSObject, NSCoding {
     
     struct PropertyKey {
         static let name = "name"
-        static let daysArray = "daysArray"
+        static let workoutsArray = "workoutsArray"
     }
     
     //MARK: Properties
     
     var name: String
-    var daysArray: [Workout]
+    var workoutsArray: [Workout]
     
-    init?(name: String, daysArray: [Workout]) {
+    init?(name: String, workoutsArray: [Workout]) {
         
         // The name must not be empty
         guard !name.isEmpty else {
             return nil
         }
-        guard !daysArray.isEmpty else {
+        guard !workoutsArray.isEmpty else {
             return nil
         }
         
         // Initialize stored properties.
         self.name = name
-        self.daysArray = daysArray
+        self.workoutsArray = workoutsArray
     }
     
     //MARK: Archiving Paths
@@ -43,7 +43,7 @@ class WorkoutDay: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(daysArray, forKey: PropertyKey.daysArray)
+        aCoder.encode(workoutsArray, forKey: PropertyKey.workoutsArray)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -54,13 +54,13 @@ class WorkoutDay: NSObject, NSCoding {
             return nil
         }
         
-        // The daysArray are required. If we cannot decode a name string, the initializer should fail.
-        guard let daysArray = aDecoder.decodeObject(forKey: PropertyKey.daysArray) as? [Workout] else {
-            os_log("Unable to decode the daysArray for a Workout object.", log: OSLog.default, type: .debug)
+        // The workoutsArray are required. If we cannot decode a name string, the initializer should fail.
+        guard let workoutsArray = aDecoder.decodeObject(forKey: PropertyKey.workoutsArray) as? [Workout] else {
+            os_log("Unable to decode the workoutsArray for a Workout object.", log: OSLog.default, type: .debug)
             return nil
         }
         
         // Must call designated initializer.
-        self.init(name: name, daysArray: daysArray)
+        self.init(name: name, workoutsArray: workoutsArray)
     }
 }
