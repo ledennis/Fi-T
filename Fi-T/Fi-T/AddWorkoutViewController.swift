@@ -18,7 +18,7 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var setsPV: UIPickerView!
     
     var workout: Workout?
-    let setGroup = ["2 x 6-8", "3 x 5", "3 x 10", "4 x 8", "5 x 5"]
+    let setGroup = ["2 x 6-8", "3 x 5", "3 x 10", "3 x 16", "3 x 20", "4 x 8", "5 x 5"]
     var selectedSet = ""
 
     override func viewDidLoad() {
