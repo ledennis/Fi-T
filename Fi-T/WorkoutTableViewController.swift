@@ -11,28 +11,17 @@ import os.log
 
 class WorkoutTableViewController: UITableViewController {
     
+
+    @IBOutlet weak var workoutDayTitle: UINavigationItem!
     @IBOutlet weak var workoutLabels: UILabel!
     //MARK: Properties
     
     var workouts = [Workout]()
+    var pushDay = WorkoutDay(name: "Push", workoutsArray: [])
+    var pullDay = WorkoutDay(name: "Pull", workoutsArray: [])
+    var legDay = WorkoutDay(name: "Leg", workoutsArray: [])
     
-    //MARK: Private Methods
-    
-    private func loadSampleWorkouts() {
-        guard let bench = Workout(name: "Bench", sets:"3 x 10", weight:"225lbs") else {
-            fatalError("Unable to instantiate bench")
-        }
-        
-        guard let deadlift = Workout(name: "Deadlift", sets:"5 x 5", weight:"315lbs") else {
-            fatalError("Unable to instantiate deadlift")
-        }
-        
-        guard let squat = Workout(name: "Squat", sets:"4 x 8", weight:"185lbs") else {
-            fatalError("Unable to instantiate squat")
-        }
-        
-        workouts += [bench, deadlift, squat]
-    }
+    var workoutManager = WorkoutDayManager(workoutDays:[])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,27 +31,19 @@ class WorkoutTableViewController: UITableViewController {
         
         workoutLabels.layer.borderWidth = 0.25
         
-        // Load any saved meals, otherwise load sample data.
+        workoutManager = WorkoutDayManager(workoutDays:[pushDay!, pullDay!, legDay!])
+        workouts = workoutManager.currentWorkoutDay.workoutsArray
+        workoutDayTitle.title = workoutManager.currentWorkoutDay.name
+        
+        // Load any saved workouts.
         if let savedWorkouts = loadWorkouts() {
             workouts += savedWorkouts
-        } else {
-            loadSampleWorkouts()
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    private func saveWorkouts() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(workouts, toFile: Workout.ArchiveURL.path)
-        
-        if isSuccessfulSave {
-            os_log("Workouts successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save workouts...", log: OSLog.default, type: .error)
-        }
     }
     
     //MARK: Actions
@@ -136,8 +117,14 @@ class WorkoutTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    //MARK: Private Methods
+
+    private func saveWorkouts() {
+        workoutManager.currentWorkoutDay.saveWorkouts(workoutsArray: workouts)
+    }
+    
     private func loadWorkouts() -> [Workout]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Workout.ArchiveURL.path) as? [Workout]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (workoutManager.currentWorkoutDay.ArchiveURL?.path)!) as? [Workout]
     }
 
     // Override to support conditional editing of the table view.

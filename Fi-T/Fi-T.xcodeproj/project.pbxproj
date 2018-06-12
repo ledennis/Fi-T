@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		77D1C2C220CDAE2000D1992B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C2C020CDAE2000D1992B /* Workout.swift */; };
 		77D1C2C320CDAE2000D1992B /* WorkoutDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C2C120CDAE2000D1992B /* WorkoutDay.swift */; };
+		77D1C2C520CDAE6F00D1992B /* WorkoutDayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C2C420CDAE6F00D1992B /* WorkoutDayManager.swift */; };
 		77D579BE20CA1CAB000A9005 /* fit-icon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D579BD20CA1CAB000A9005 /* fit-icon-1024x1024.png */; };
 		77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */; };
 		77ECAC2120719F7200DA0E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ECAC1F20719F7200DA0E88 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		77D1C2C020CDAE2000D1992B /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = Classes/Workout.swift; sourceTree = "<group>"; };
 		77D1C2C120CDAE2000D1992B /* WorkoutDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutDay.swift; path = Classes/WorkoutDay.swift; sourceTree = "<group>"; };
+		77D1C2C420CDAE6F00D1992B /* WorkoutDayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutDayManager.swift; path = Classes/WorkoutDayManager.swift; sourceTree = "<group>"; };
 		77D579BD20CA1CAB000A9005 /* fit-icon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fit-icon-1024x1024.png"; path = "../../../../../../Pictures/fit-icon-1024x1024.png"; sourceTree = "<group>"; };
 		77ECAC1820719F7200DA0E88 /* Fi-T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fi-T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ECAC1B20719F7200DA0E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				77D1C2C020CDAE2000D1992B /* Workout.swift */,
 				77D1C2C120CDAE2000D1992B /* WorkoutDay.swift */,
+				77D1C2C420CDAE6F00D1992B /* WorkoutDayManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				77ECAC1C20719F7200DA0E88 /* AppDelegate.swift in Sources */,
 				77ECAC4A20730B1600DA0E88 /* AddWorkoutViewController.swift in Sources */,
 				77ECAC5A207327E400DA0E88 /* WorkoutTableViewController.swift in Sources */,
+				77D1C2C520CDAE6F00D1992B /* WorkoutDayManager.swift in Sources */,
 				77D1C2C220CDAE2000D1992B /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

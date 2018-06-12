@@ -241,6 +241,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="workoutDayTitle" destination="Bj0-FQ-7zK" id="pcd-PI-IzZ"/>
                         <outlet property="workoutLabels" destination="gHu-ei-Cko" id="YYc-Fl-WlU"/>
                     </connections>
                 </tableViewController>
