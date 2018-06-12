@@ -55,7 +55,7 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate, UIPickerV
         } else if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
         } else {
-            fatalError("The MealViewController is not inside a navigation controller.")
+            fatalError("The WorkoutViewController is not inside a navigation controller.")
         }
     }
 
