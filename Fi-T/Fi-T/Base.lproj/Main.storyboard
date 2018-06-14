@@ -245,10 +245,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                     <state key="normal" title="&lt;"/>
+                                    <connections>
+                                        <action selector="leftButtonAction:" destination="Us0-NX-vQQ" eventType="touchUpInside" id="26L-1m-OyZ"/>
+                                    </connections>
                                 </button>
-                                <connections>
-                                    <action selector="leftButtonAction:" destination="Us0-NX-vQQ" id="icW-Zg-dFw"/>
-                                </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
@@ -271,6 +271,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ihl-5G-pae">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
