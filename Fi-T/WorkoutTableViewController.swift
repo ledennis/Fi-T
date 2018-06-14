@@ -58,20 +58,22 @@ class WorkoutTableViewController: UITableViewController {
         return true
     }
     
-    //MARK: Button Actions
-    
-    @IBAction func leftButtonAction(_ sender: Any) {
-        workoutManager.prevWorkoutDay()
+    private func reloadTable() {
         workouts = workoutManager.loadWorkouts()!
         workoutDayTitle.title = workoutManager.currentWorkoutDay.name
         self.tableView.reloadData()
     }
     
+    //MARK: Button Actions
+    
+    @IBAction func leftButtonAction(_ sender: Any) {
+        workoutManager.prevWorkoutDay()
+        reloadTable()
+    }
+    
     @IBAction func rightButtonAction(_ sender: Any) {
         workoutManager.nextWorkoutDay()
-        workouts = workoutManager.loadWorkouts()!
-        workoutDayTitle.title = workoutManager.currentWorkoutDay.name
-        self.tableView.reloadData()
+        reloadTable()
     }
     
     
