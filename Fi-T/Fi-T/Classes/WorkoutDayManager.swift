@@ -31,7 +31,7 @@ class WorkoutDayManager {
     }
     
     func nextWorkoutDay() {
-        if (arrayTracker == workoutDays.count) {
+        if (arrayTracker == workoutDays.count-1) {
             arrayTracker = 0
         } else {
             arrayTracker += 1
@@ -42,7 +42,7 @@ class WorkoutDayManager {
     
     func prevWorkoutDay() {
         if (arrayTracker == 0) {
-            arrayTracker = workoutDays.count
+            arrayTracker = workoutDays.count-1
         } else {
             arrayTracker -= 1
         }

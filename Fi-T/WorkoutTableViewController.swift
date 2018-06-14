@@ -11,7 +11,6 @@ import os.log
 
 class WorkoutTableViewController: UITableViewController {
     
-
     @IBOutlet weak var workoutDayTitle: UINavigationItem!
     @IBOutlet weak var workoutLabels: UILabel!
     //MARK: Properties
@@ -25,10 +24,7 @@ class WorkoutTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Use the edit button item provided by the table view controller.
-        navigationItem.leftBarButtonItem = editButtonItem
-        
+
         workoutLabels.layer.borderWidth = 0.25
         
         workoutManager = WorkoutDayManager(workoutDays:[pushDay!, pullDay!, legDay!])
@@ -45,6 +41,39 @@ class WorkoutTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Private Methods
+    
+    private func saveWorkouts() {
+        workoutManager.currentWorkoutDay.saveWorkouts(workoutsArray: workouts)
+    }
+    
+    private func loadWorkouts() -> [Workout]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (workoutManager.currentWorkoutDay.ArchiveURL?.path)!) as? [Workout]
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    //MARK: Button Actions
+    
+    @IBAction func leftButtonAction(_ sender: Any) {
+        workoutManager.prevWorkoutDay()
+        workouts = workoutManager.currentWorkoutDay.workoutsArray
+        workoutDayTitle.title = workoutManager.currentWorkoutDay.name
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func rightButtonAction(_ sender: Any) {
+        workoutManager.nextWorkoutDay()
+        workouts = workoutManager.currentWorkoutDay.workoutsArray
+        workoutDayTitle.title = workoutManager.currentWorkoutDay.name
+        self.tableView.reloadData()
+    }
+    
     
     //MARK: Actions
     
@@ -115,22 +144,6 @@ class WorkoutTableViewController: UITableViewController {
         saveWorkouts()
         NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(workouts)")
         self.tableView.reloadData()
-    }
-    
-    //MARK: Private Methods
-
-    private func saveWorkouts() {
-        workoutManager.currentWorkoutDay.saveWorkouts(workoutsArray: workouts)
-    }
-    
-    private func loadWorkouts() -> [Workout]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: (workoutManager.currentWorkoutDay.ArchiveURL?.path)!) as? [Workout]
-    }
-
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
     }
 
     // Override to support editing the table view.

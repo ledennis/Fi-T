@@ -24,6 +24,9 @@ class AddWorkoutViewController: UIViewController, UITextFieldDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Defaulting selectedSet to first index of setGroup.
+        selectedSet = setGroup[0]
+        
         // Handle the text field’s user input through delegate callbacks.
         addWorkoutTF.delegate = self
         
