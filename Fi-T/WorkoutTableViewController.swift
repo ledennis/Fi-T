@@ -62,14 +62,14 @@ class WorkoutTableViewController: UITableViewController {
     
     @IBAction func leftButtonAction(_ sender: Any) {
         workoutManager.prevWorkoutDay()
-        workouts = workoutManager.currentWorkoutDay.workoutsArray
+        workouts = workoutManager.loadWorkouts()!
         workoutDayTitle.title = workoutManager.currentWorkoutDay.name
         self.tableView.reloadData()
     }
     
     @IBAction func rightButtonAction(_ sender: Any) {
         workoutManager.nextWorkoutDay()
-        workouts = workoutManager.currentWorkoutDay.workoutsArray
+        workouts = workoutManager.loadWorkouts()!
         workoutDayTitle.title = workoutManager.currentWorkoutDay.name
         self.tableView.reloadData()
     }

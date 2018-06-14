@@ -49,4 +49,8 @@ class WorkoutDayManager {
         
         currentWorkoutDay = workoutDays[arrayTracker]
     }
+    
+    func loadWorkouts() -> [Workout]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (currentWorkoutDay.ArchiveURL?.path)!) as? [Workout]
+    }
 }
