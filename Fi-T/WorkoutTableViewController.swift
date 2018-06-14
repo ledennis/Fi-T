@@ -24,6 +24,9 @@ class WorkoutTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Enabling shake gesture.
+        self.becomeFirstResponder()
 
         workoutLabels.layer.borderWidth = 0.25
         
@@ -42,6 +45,21 @@ class WorkoutTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Shake Methods
+
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    // Enable detection of shake motion.
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            nextWorkout()
+        }
+    }
+    
     //MARK: Private Methods
     
     private func saveWorkouts() {
@@ -52,10 +70,14 @@ class WorkoutTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: (workoutManager.currentWorkoutDay.ArchiveURL?.path)!) as? [Workout]
     }
     
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    private func nextWorkout() {
+        workoutManager.nextWorkoutDay()
+        reloadTable()
+    }
+    
+    private func prevWorkout() {
+        workoutManager.prevWorkoutDay()
+        reloadTable()
     }
     
     private func reloadTable() {
@@ -67,13 +89,11 @@ class WorkoutTableViewController: UITableViewController {
     //MARK: Button Actions
     
     @IBAction func leftButtonAction(_ sender: Any) {
-        workoutManager.prevWorkoutDay()
-        reloadTable()
+        prevWorkout()
     }
     
     @IBAction func rightButtonAction(_ sender: Any) {
-        workoutManager.nextWorkoutDay()
-        reloadTable()
+        nextWorkout()
     }
     
     
@@ -97,6 +117,12 @@ class WorkoutTableViewController: UITableViewController {
             saveWorkouts()
         }
         
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
 
     // MARK: - Table view data source
